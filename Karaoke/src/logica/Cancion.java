@@ -14,7 +14,8 @@ public class Cancion extends Thread {
 	
 
 	public Cancion() {
-
+		
+		numeroLineaActual = 0;
 		letra = new ArrayList<>();
 	}
 
@@ -81,27 +82,29 @@ public class Cancion extends Thread {
 	public void pausar() {
 		parar = true;
 	}
-	
+
 	@Override
 	public void run() {
 		super.run();
 		while (iniciar) {
 			leerLetra();
+			try {
+				sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		try {
-			sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+		System.out.println(letra.size());
 	}
-	
+
 	public void leerLetra() {
 		
-		for (int i = 0; i < letra.size(); i++) {
-			System.out.println(letra.get(i));
+		if (numeroLineaActual <= letra.size()) {
+			System.out.println(letra.get(numeroLineaActual));
+			numeroLineaActual++;	
 		}
+
 	}
 	
 }

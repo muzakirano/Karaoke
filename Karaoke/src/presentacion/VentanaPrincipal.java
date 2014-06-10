@@ -18,6 +18,7 @@ public class VentanaPrincipal extends JFrame{
 		archivoPlano = new ArchivoPlano(); 
 		try {
 			archivoPlano.leerArchivoPlano();
+			archivoPlano.getCancion().comenzar();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

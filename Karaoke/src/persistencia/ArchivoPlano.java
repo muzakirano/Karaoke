@@ -33,7 +33,7 @@ public class ArchivoPlano {
 		while(bufferedReader.ready()){
 			linea = bufferedReader.readLine();
 			cancion.agregarLinea(linea);
-			System.out.println(cancion.getLetra().get(0));
+//			System.out.println(cancion.getLetra().get(0));
 			
 		}
 	}
@@ -45,9 +45,5 @@ public class ArchivoPlano {
 
 	public void setCancion(Cancion cancion) {
 		this.cancion = cancion;
-	}
-
-	public static void main(String[] args) {
-		
 	}
 }

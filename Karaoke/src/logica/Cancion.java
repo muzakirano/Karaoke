@@ -86,13 +86,22 @@ public class Cancion extends Thread {
 	public void run() {
 		super.run();
 		while (iniciar) {
-			
+			leerLetra();
+		}
+		try {
+			sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 	}
 	
 	public void leerLetra() {
 		
+		for (int i = 0; i < letra.size(); i++) {
+			System.out.println(letra.get(i));
+		}
 	}
 	
 }

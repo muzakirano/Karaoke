@@ -10,7 +10,6 @@ import javax.swing.JFileChooser;
 import logica.Cancion;
 
 public class ArchivoPlano {
-
 	
 	private File file;
 	private BufferedReader bufferedReader;

@@ -10,7 +10,6 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 
 public class ArchivoPlano {
-
 	
 	private File file;
 	private BufferedReader bufferedReader;

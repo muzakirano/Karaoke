@@ -48,9 +48,7 @@ public class ArchivoPlano {
 		this.cancion = cancion;
 	}
 
-	
 	public static void main(String[] args) {
-	
-		ArchivoPlano ap = new ArchivoPlano();
+		
 	}
 }

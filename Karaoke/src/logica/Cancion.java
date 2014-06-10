@@ -2,13 +2,15 @@ package logica;
 
 import java.util.ArrayList;
 
-public class Cancion {
+public class Cancion extends Thread {
 	
 	private String nombre;
 	private int	duracion;
 	private ArrayList<String> letra;
 	private int numeroLineaActual;
 	private String imagenAlbum;
+	private boolean iniciar;
+	private boolean parar;
 	
 
 	public Cancion() {
@@ -71,5 +73,26 @@ public class Cancion {
 		letra.add(linea);
 	}
 	
+	public void comenzar() {
+		iniciar = true;
+		start();
+	}
+	
+	public void pausar() {
+		parar = true;
+	}
+	
+	@Override
+	public void run() {
+		super.run();
+		while (iniciar) {
+			
+		}
+		
+	}
+	
+	public void leerLetra() {
+		
+	}
 	
 }

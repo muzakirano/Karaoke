@@ -21,8 +21,7 @@ public class PanelReproduccion extends JPanel implements Runnable{
 		txLetra = new JTextArea();
 		txLetra.setFont(new Font("Arial", Font.BOLD, 23));
 		txLetra.setEditable(false);
-		
-			
+					
 		add(txLetra);
 		Thread t = new Thread(this);
 		t.start();
@@ -36,7 +35,6 @@ public class PanelReproduccion extends JPanel implements Runnable{
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			txLetra.setText(letra);
@@ -45,10 +43,9 @@ public class PanelReproduccion extends JPanel implements Runnable{
 		while(true){
 			try {
 				letra="\n"+letra;
-				Thread.sleep(5000);
+				Thread.sleep(1000);
 				txLetra.setText(letra);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

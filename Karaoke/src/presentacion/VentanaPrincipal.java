@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javax.swing.JFrame;
 
+import logica.Cancion;
 import persistencia.ArchivoPlano;
 
 public class VentanaPrincipal extends JFrame{
@@ -18,18 +19,17 @@ public class VentanaPrincipal extends JFrame{
 		archivoPlano = new ArchivoPlano(); 
 		try {
 			archivoPlano.leerArchivoPlano();
-			archivoPlano.getCancion().comenzar();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		setSize(400, 400);
+		setSize(600, 400);
 		getContentPane().setBackground(Color.white);
-		setLayout(null);
+		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		
 		panelReproduccion = new PanelReproduccion(archivoPlano.getCancion());
-		panelReproduccion.setBounds(20, 300, 390, 50);
+		//panelReproduccion.setBounds(20, 300, 390, 50); cambiar ubicacion panel
 		
 		add(panelReproduccion);
 		
@@ -38,5 +38,6 @@ public class VentanaPrincipal extends JFrame{
 	
 	public static void main(String[] args) {
 		VentanaPrincipal vp = new VentanaPrincipal();
+		
 	}
 }

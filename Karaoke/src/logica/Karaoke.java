@@ -39,6 +39,10 @@ public class Karaoke extends Thread{
 				System.out.println("nada");
 			}
 		}
+	} 
+	
+	public void colorLetraCancion(){
+		
 	}
 	
 }

@@ -1,9 +1,11 @@
 package logica;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cancion extends Thread {
-	
+public class Cancion extends Thread  implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private int	duracion;
 	private ArrayList<String> letra;
@@ -11,10 +13,10 @@ public class Cancion extends Thread {
 	private String imagenAlbum;
 	private boolean iniciar;
 	private boolean parar;
-	
+
 
 	public Cancion() {
-		
+
 		numeroLineaActual = 0;
 		letra = new ArrayList<>();
 	}
@@ -68,17 +70,17 @@ public class Cancion extends Thread {
 	public void setImagenAlbum(String imagenAlbum) {
 		this.imagenAlbum = imagenAlbum;
 	}
-	
+
 	public void agregarLinea(String linea) {
-		
+
 		letra.add(linea);
 	}
-	
+
 	public void comenzar() {
 		iniciar = true;
 		start();
 	}
-	
+
 	public void pausar() {
 		parar = true;
 	}
@@ -99,12 +101,18 @@ public class Cancion extends Thread {
 	}
 
 	public void leerLetra() {
-		
+
 		if (numeroLineaActual <= letra.size()) {
 			System.out.println(letra.get(numeroLineaActual));
 			numeroLineaActual++;	
 		}
 
+
 	}
-	
+	public String obtenerDuracion(){//falta probar el metodo en el main O.o
+		int minutos = duracion/60;
+		int segundos = duracion%60;
+		return minutos+":"+segundos;
+	}
+
 }

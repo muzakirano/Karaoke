@@ -11,28 +11,33 @@ public class VentanaPrincipal extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	private PanelReproduccion panelReproduccion;
+	private PanelArtistas panelArtistas;
+	private PanelCanciones panelCanciones;
+	private PanelGeneros panelGeneros;
 	private ArchivoPlano archivoPlano;
 	
+	
 	public VentanaPrincipal() {
+
+		archivoPlano = new ArchivoPlano(); 
 		
-					archivoPlano = new ArchivoPlano(); 
-			try {
-				archivoPlano.leerArchivoPlano();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			setSize(600, 400);
-			getContentPane().setBackground(Color.white);
+		try {
+			archivoPlano.leerArchivoPlano();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		setSize(600, 400);
+		getContentPane().setBackground(Color.white);
 
-			setDefaultCloseOperation(EXIT_ON_CLOSE);
-			setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 
-			panelReproduccion = new PanelReproduccion(archivoPlano.getCancion());
-			panelReproduccion.setBounds(20, 10, 100, 50); 
+		panelReproduccion = new PanelReproduccion(archivoPlano.getCancion());
+		panelReproduccion.setBounds(20, 10, 100, 50); 
 
-			add(panelReproduccion);
+		add(panelReproduccion);
 
-			setVisible(true);
+		setVisible(true);
 	}
 
 	

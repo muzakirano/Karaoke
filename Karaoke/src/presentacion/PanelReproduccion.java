@@ -31,9 +31,10 @@ public class PanelReproduccion extends JPanel implements Runnable{
 	public void run() {
 		String letra="";
 		for (int i = 0; i < cancion.getLetra().size(); i++) {
-			letra=cancion.getLetra().get(i)+"\n"+letra;
+//			letra=cancion.getLetra().get(i)+"\n"+letra;  Es mejor que aparezca linea por linea  y no se vaya juntando con el resto para que la persona no se pierda... ?
+			letra = cancion.getLetra().get(i);
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(4000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
